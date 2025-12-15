@@ -1,204 +1,254 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Student Bento Grid - SYAMIR SHUHAIRI</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
-    <style>
-        /* --- UPDATED THEME: Ocean Blue Accent --- */
-        :root {
-            --color-background: #F4F7FB; /* Soft White/Light Grey */
-            --color-card-bg: #FFFFFF;    /* Clean White */
-            --color-text-primary: #1F2937; /* Dark Grey/Almost Black */
-            --color-text-secondary: #6B7280; /* Muted Grey */
-            --color-accent: #0A66C2;     /* Deep Ocean Blue (LinkedIn/Professional Blue) */
-            --border-radius-lg: 16px;
-            --border-radius-sm: 8px;
-            --padding-base: 24px;
-        }
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Student Bento Grid - Syamir Shuhairi</title>
 
-        /* General Reset and Font Application */
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: var(--color-background);
-            color: var(--color-text-primary);
-            margin: 0;
-            padding: 20px;
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: flex-start;
-        }
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
 
-        .container {
-            width: 100%;
-            max-width: 1200px;
-        }
+<style>
+:root {
+    --color-background: #F4F7FB;
+    --color-card-bg: #FFFFFF;
+    --color-text-primary: #1F2937;
+    --color-text-secondary: #6B7280;
+    --color-accent: #0A66C2;
+    --radius-lg: 16px;
+    --radius-sm: 8px;
+    --padding: 24px;
+}
 
-        /* --- Bento Grid Layout --- */
-        .bento-grid {
-            display: grid;
-            gap: 20px;
-            grid-template-columns: repeat(4, 1fr); 
-            grid-auto-rows: minmax(120px, auto);
-        }
+/* ---------- Base Reset ---------- */
+* {
+    box-sizing: border-box;
+}
 
-        .card {
-            background-color: var(--color-card-bg);
-            border-radius: var(--border-radius-lg);
-            padding: var(--padding-base);
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
+body {
+    margin: 0;
+    padding: 20px;
+    font-family: 'Inter', sans-serif;
+    background: var(--color-background);
+    color: var(--color-text-primary);
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+}
 
-        .card:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
-        }
+/* ---------- Container ---------- */
+.container {
+    width: 100%;
+    max-width: 1200px;
+}
 
-        /* Desktop Card Sizing */
-        .card-1 { grid-column: span 2; grid-row: span 2; }
-        .card-2 { grid-column: span 1; grid-row: span 1; }
-        .card-3 { grid-column: span 1; grid-row: span 2; }
-        .card-4 { grid-column: span 2; grid-row: span 1; }
-        .card-5 { grid-column: span 1; grid-row: span 1; }
-        .card-6 { grid-column: 1 / -1; min-height: 80px; }
+/* ---------- Bento Grid ---------- */
+.bento-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
 
-        /* Typography and Content Styling */
-        .card h3 {
-            font-size: 1.5rem;
-            margin-top: 0;
-            color: var(--color-text-primary);
-        }
-        
-        .card h4 {
-            font-size: 1.1rem;
-            margin-bottom: 5px;
-            color: var(--color-accent);
-            font-weight: 600;
-        }
+/* ---------- Card Base ---------- */
+.card {
+    background: var(--color-card-bg);
+    border-radius: var(--radius-lg);
+    padding: var(--padding);
+    box-shadow: 0 6px 14px rgba(0,0,0,0.06);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
 
-        .card p {
-            margin-bottom: 0;
-            line-height: 1.5;
-            color: var(--color-text-secondary);
-        }
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 14px 30px rgba(0,0,0,0.12);
+}
 
-        /* Profile Card Specifics */
-        .profile-title {
-            font-size: 2.5rem;
-            font-weight: 800;
-            margin: 0 0 5px 0;
-            line-height: 1.1;
-        }
+/* ---------- PROFILE CARD ---------- */
+.card-1 {
+    grid-column: span 2;
+    grid-row: span 2;
 
-        .profile-subtitle {
-            font-size: 1.25rem;
-            font-weight: 500;
-            color: var(--color-accent);
-            margin: 0 0 20px 0;
-        }
+    background-image: url("bg.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 
-        .social-links a {
-            color: var(--color-text-secondary);
-            text-decoration: none;
-            margin-right: 15px;
-            font-weight: 500;
-            transition: color 0.2s ease;
-        }
+    /* Overlay */
+    background-color: rgba(0,0,0,0.45);
+    background-blend-mode: multiply;
 
-        .social-links a:hover {
-            color: var(--color-accent);
-        }
+    color: #ffffff;
+}
 
-        .accent-text {
-            color: var(--color-accent);
-            font-weight: 700;
-        }
+/* ---------- Grid Sizes ---------- */
+.card-2 { grid-column: span 1; }
+.card-3 { grid-column: span 1; grid-row: span 2; }
+.card-4 { grid-column: span 2; }
+.card-5 { grid-column: span 1; }
+.card-7 { grid-column: span 1; }
 
-        /* --- Mobile Responsiveness --- */
-        @media (max-width: 768px) {
-            body {
-                padding: 15px;
-            }
-            .bento-grid {
-                grid-template-columns: 1fr; 
-                grid-auto-rows: auto;
-            }
-            .card-1, .card-2, .card-3, .card-4, .card-5, .card-6 {
-                grid-column: span 1;
-                grid-row: auto;
-                min-height: 120px;
-            }
-            .card-1 {
-                min-height: 200px;
-            }
-            .profile-title {
-                font-size: 2rem;
-            }
-        }
-    </style>
+.card-6 {
+    grid-column: 1 / -1;
+    padding-bottom: 0;
+}
+
+/* ---------- Typography ---------- */
+h4 {
+    margin: 0 0 10px;
+    font-size: 1.1rem;
+    color: var(--color-accent);
+}
+
+.profile-title {
+    font-size: 2.6rem;
+    font-weight: 800;
+    margin: 0;
+}
+
+.profile-subtitle {
+    margin-top: 5px;
+    font-size: 1.25rem;
+    opacity: 0.9;
+}
+
+.accent-text {
+    color: var(--color-accent);
+    font-weight: 700;
+}
+
+/* Profile Card Overrides */
+.card-1 h1,
+.card-1 p,
+.card-1 span {
+    color: #ffffff;
+}
+
+.card-1 .accent-text {
+    color: #B3D8FF;
+}
+
+/* ---------- Social Links ---------- */
+.social-links a {
+    color: #E6F0FF;
+    text-decoration: none;
+    margin-right: 15px;
+    font-weight: 500;
+}
+
+.social-links a:hover {
+    text-decoration: underline;
+}
+
+/* ---------- Spotify ---------- */
+.card-6 iframe {
+    width: 100%;
+    height: 352px;
+    border-radius: 12px;
+}
+
+/* ---------- Mobile ---------- */
+@media (max-width: 768px) {
+    body {
+        padding: 15px;
+    }
+
+    .bento-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .card {
+        grid-column: span 1 !important;
+        grid-row: auto !important;
+    }
+
+    .card-1 {
+        min-height: 220px;
+    }
+
+    .card-6 iframe {
+        height: 80px;
+    }
+}
+</style>
 </head>
+
 <body>
-    <div class="container">
-        <div class="bento-grid">
 
-            <div class="card card-1">
-                <div>
-                    <h1 class="profile-title">SYAMIR SHUHAIRI</h1>
-                    <p class="profile-subtitle">'Innovating food safety.'</p>
+<div class="container">
+    <div class="bento-grid">
+
+        <!-- PROFILE CARD -->
+        <div class="card card-1">
+            <div>
+                <h1 class="profile-title">SYAMIR SHUHAIRI</h1>
+                <p class="profile-subtitle">“Innovating food safety.”</p>
+            </div>
+
+            <div>
+                <p>Program: <span class="accent-text">Science Agrotechnology</span></p>
+                <p>Year: <span class="accent-text">Year 1</span></p>
+
+                <div class="social-links">
+                    <a href="#">LinkedIn</a>
+                    <a href="#">GitHub</a>
+                    <a href="#">UMT Portal</a>
                 </div>
-                <div>
-                    <p>Program: <span class="accent-text">SCIENCE AGROTECHNOLOGY</span></p>
-                    <p>Year: <span class="accent-text">Year 1</span></p>
-                    <div class="social-links">
-                        <a href="#">LinkedIn</a>
-                        <a href="#">GitHub</a>
-                        <a href="#">UMT Portal</a>
-                    </div>
-                </div>
             </div>
-
-            <div class="card card-2">
-                <h4>📍 Location</h4>
-                <p>Campus: <span class="accent-text">UMT, Kuala Nerus</span></p>
-                <p>Local Time: <span id="current-time">10:45 AM</span></p>
-                <script>
-                    // Display current time based on client's machine time
-                    document.getElementById('current-time').textContent = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
-                </script>
-            </div>
-
-            <div class="card card-3">
-                <h4>📚 Key Modules & Skills</h4>
-                <p>Core: <span class="accent-text">Soil Science</span></p>
-                <p>Laboratory: <span class="accent-text">Microbiology, Lab Analysis</span></p>
-                <p>Software: <span class="accent-text">Excel (Data Management)</span></p>
-            </div>
-
-            <div class="card card-4">
-                <h4>🔬 Ongoing Project</h4>
-                <p>Title: **Starch Gelatinization in Local Kuih**</p>
-                <p>Description: Analyzing texture profiles of <span class="accent-text">Kuih Lapis</span> samples.</p>
-            </div>
-
-            <div class="card card-5">
-                <h4>🧘 Campus Life</h4>
-                <p>Activity: **Evening walks at Pantai UMT**</p>
-                <p>Focus: <span class="accent-text">Mindfulness and Reflection</span></p>
-            </div>
-            
-            <div class="card card-6">
-                <h4>🎶 Study Vibes Playlist</h4>
-                <p>Placeholder for an embedded music player.</p>
-                <p>Currently Listening: <span class="accent-text">Focus Music for Deep Work</span></p>
-            </div>
-
         </div>
+
+        <!-- LOCATION -->
+        <div class="card card-2">
+            <h4>📍 Location</h4>
+            <p>Campus: <span class="accent-text">UMT, Kuala Nerus</span></p>
+            <p>Local Time: <span id="time"></span></p>
+        </div>
+
+        <!-- SKILLS -->
+        <div class="card card-3">
+            <h4>📚 Key Modules & Skills</h4>
+            <p>Soil Science</p>
+            <p>Microbiology</p>
+            <p>Excel & Data Analysis</p>
+        </div>
+
+        <!-- PROJECT -->
+        <div class="card card-4">
+            <h4>🔬 Ongoing Project</h4>
+            <p><strong>Starch Gelatinization in Local Kuih</strong></p>
+            <p>Texture analysis of Kuih Lapis samples.</p>
+        </div>
+
+        <!-- CAMPUS LIFE -->
+        <div class="card card-5">
+            <h4>🧘 Campus Life</h4>
+            <p>Evening walks at Pantai UMT</p>
+            <p><span class="accent-text">Mindfulness & Reflection</span></p>
+        </div>
+
+        <!-- REFLECTION -->
+        <div class="card card-7">
+            <h4>🇲🇾 Why Food Tech Matters</h4>
+            <p>Sustainable food systems improve nutrition, reduce waste, and protect future generations.</p>
+        </div>
+
+        <!-- SPOTIFY -->
+        <div class="card card-6">
+            <h4>🎶 Study Vibes</h4>
+            <iframe src="https://open.spotify.com/embed/track/64qfw9JZl3RYCrq4Mn0WvT?utm_source=generator"
+                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                loading="lazy"></iframe>
+        </div>
+
     </div>
+</div>
+
+<script>
+document.getElementById("time").textContent =
+    new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+</script>
+
 </body>
 </html>
