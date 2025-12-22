@@ -142,6 +142,32 @@ h4 {
     text-decoration: underline;
 }
 
+/* ---------- Focus Timer Button ---------- */
+.timer-btn {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 12px 24px;
+    background-color: var(--color-accent);
+    color: white;
+    text-decoration: none;
+    border-radius: var(--radius-sm);
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(10, 102, 194, 0.2);
+}
+
+.timer-btn:hover {
+    background-color: #084d91;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(10, 102, 194, 0.3);
+}
+
+.timer-btn:active {
+    transform: translateY(0);
+}
+
 /* ---------- Spotify ---------- */
 .card-6 iframe {
     width: 100%;
@@ -180,7 +206,6 @@ h4 {
 <div class="container">
     <div class="bento-grid">
 
-        <!-- PROFILE CARD -->
         <div class="card card-1">
             <div>
                 <h1 class="profile-title">SYAMIR SHUHAIRI</h1>
@@ -199,14 +224,12 @@ h4 {
             </div>
         </div>
 
-        <!-- LOCATION -->
         <div class="card card-2">
             <h4>📍 Location</h4>
             <p>Campus: <span class="accent-text">UMT, Kuala Nerus</span></p>
             <p>Local Time: <span id="time"></span></p>
         </div>
 
-        <!-- SKILLS -->
         <div class="card card-3">
             <h4>📚 Key Modules & Skills</h4>
             <p>Soil Science</p>
@@ -214,31 +237,30 @@ h4 {
             <p>Excel & Data Analysis</p>
         </div>
 
-        <!-- PROJECT -->
         <div class="card card-4">
             <h4>🔬 Ongoing Project</h4>
-            <p><strong>Starch Gelatinization in Local Kuih</strong></p>
-            <p>Texture analysis of Kuih Lapis samples.</p>
+            <div style="display: flex; flex-direction: column; gap: 8px;">
+                <p><strong>Starch Gelatinization in Local Kuih</strong></p>
+                <p>Texture analysis of Kuih Lapis samples.</p>
+                <a href="https://s80582-gif.github.io/focus-timer-app/app.html" class="timer-btn">Try My Focus Timer App</a>
+            </div>
         </div>
 
-        <!-- CAMPUS LIFE -->
         <div class="card card-5">
             <h4>🧘 Campus Life</h4>
             <p>Evening walks at Pantai UMT</p>
             <p><span class="accent-text">Mindfulness & Reflection</span></p>
         </div>
 
-        <!-- REFLECTION -->
         <div class="card card-7">
             <h4>🇲🇾 Why Food Tech Matters</h4>
             <p>Sustainable food systems improve nutrition, reduce waste, and protect future generations.</p>
         </div>
 
-        <!-- SPOTIFY -->
         <div class="card card-6">
             <h4>🎶 Study Vibes</h4>
-            <iframe src="https://open.spotify.com/embed/track/64qfw9JZl3RYCrq4Mn0WvT?utm_source=generator"
-                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+            <iframe src="https://open.spotify.com/embed/playlist/37i9dQZF1DWWQRvui9Df7X" 
+                width="100%" height="352" frameborder="0" allowtransparency="true" allow="encrypted-media"
                 loading="lazy"></iframe>
         </div>
 
